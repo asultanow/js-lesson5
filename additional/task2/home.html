@@ -1,0 +1,51 @@
+<!--
+Імітуємо наповнення інтернет магазину товарами :
+Створити форму з наступними полями :
+- назва товару
+- кількість товару
+- ціна товару
+- картинка товару (посилання з інтернету)
+Зберігати товари в масив в локалсорадж. При збережені товару з форми, action не повинно відбуватись.
+створити елемент <a href='list.html'> На сторінку товарів</a>, та list.html, при переході на який відобразити на сторінці всі товари.
+На сторінці  list.html побудувати кнопку яка видаляє всі товари з корзини та локалстораджа.
+До кожного товару додати кнопку, при кліку на яку з лс видаляється конкретний обраний  товар
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<div class="main">
+    <header class="header d-flex">
+        <h1>Add product to list</h1>
+        <div class=""><a href="list.html" class="btn bg-blue">View products</a></div>
+    </header>
+    <div class="product-form-box">
+        <form id="product-form">
+            <div class="form-items d-flex">
+                <div><label for="product-name-inp">Product:</label></div>
+                <div><input type="text" id="product-name-inp" name="product-name-inp"></div>
+                <div><label for="amount-inp">Amount:</label></div>
+                <div><input type="number" id="amount-inp" name="amount-inp"></div>
+                <div><label for="price-inp">Price:</label></div>
+                <div><input type="number" id="price-inp" name="price-inp"></div>
+                <div><label for="img-url-inp">Image url:</label></div>
+                <div><input type="text" id="img-url-inp" name="img-url-inp"></div>
+            </div>
+        </form>
+    </div>
+    <button id="send-form-btn" class="btn bg-blue">Add product</button>
+</div>
+
+<script src="javascript/home.js"></script>
+
+</body>
+</html>

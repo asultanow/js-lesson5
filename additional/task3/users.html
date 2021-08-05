@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Users</title>
+    <style>
+        #users1, #users2, #users3, .user1, .user2, .user3 {
+            padding: 8px;
+            margin: 10px;
+            background: #efefef;
+        }
+
+        #users1, #users2 {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #users3 {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .user1, .user2, .user3 {
+            background: #dcdcdc;
+        }
+
+        .d-flex {
+            display: flex;
+        }
+
+        .w260 {
+            width: 260px;
+        }
+
+        .left, .right {
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+
+<div id="users1" class="d-flex"></div>
+<div id="users2" class="d-flex"></div>
+<div id="users3" class="d-flex"></div>
+
+<script>
+    let users = [{
+        name: 'vasya',
+        age: 31,
+        status: false,
+        address: {city: 'Lviv', country: 'Ukraine', street: 'Shevchenko', houseNumber: 1}
+    }, {
+        name: 'petya',
+        age: 30,
+        status: true,
+        address: {city: 'New York', country: 'USA', street: 'East str', houseNumber: 21}
+    }, {
+        name: 'kolya',
+        age: 29,
+        status: true,
+        address: {city: 'Budapest', country: 'Hungary', street: 'Kuraku', houseNumber: 78}
+    }, {
+        name: 'olya',
+        age: 28,
+        status: false,
+        address: {city: 'Prague', country: 'Czech', street: 'Paster', houseNumber: 56}
+    }, {
+        name: 'max',
+        age: 30,
+        status: true,
+        address: {city: 'Istanbul', country: 'Turkey', street: 'Mikar', houseNumber: 39}
+    }, {
+        name: 'anya',
+        age: 31,
+        status: false,
+        address: {city: 'Rio', country: 'Brasil', street: 'Ronaldi', houseNumber: 5}
+    }, {
+        name: 'oleg',
+        age: 28,
+        status: false,
+        address: {city: 'Montreal', country: 'Canada', street: 'Acusto', houseNumber: 90}
+    }, {
+        name: 'andrey',
+        age: 29,
+        status: true,
+        address: {city: 'Quebeck', country: 'Canada', street: 'Binaro', houseNumber: 33}
+    }, {
+        name: 'masha',
+        age: 30,
+        status: true,
+        address: {city: 'Moscow', country: 'Russia', street: 'Gogolia', houseNumber: 1}
+    }, {
+        name: 'olya',
+        age: 31,
+        status: false,
+        address: {city: 'Portland', country: 'USA', street: 'Forest str', houseNumber: 4}
+    }, {
+        name: 'max',
+        age: 31,
+        status: true,
+        address: {city: 'Cairo', country: 'Egypt', street: 'Seashore', houseNumber: 45}
+    }];
+
+    // - З масиву users за допомогою циклу витягнути адреси користувачів і записати (скопіювати) їх в інший порожній масив.
+
+    const addresses = [];
+
+    for (const user of users) {
+        addresses.push({
+            city: user.address.city,
+            country: user.address.country,
+            street: user.address.street,
+            houseNumber: user.address.houseNumber
+        });
+    }
+
+    console.log(addresses);
+
+    // - За допомоги циклу проітерувати  масив users, записати кожного юзера в сівй блок за допомоги document.createElement. Всі данні в одному блоці.
+
+    const usersDiv1 = document.getElementById('users1');
+
+    for (const user of users) {
+        const userDiv = document.createElement('div');
+        userDiv.classList.add('user1');
+        userDiv.innerText = `name: ${user.name} -- age: ${user.age} -- status: ${user.status} -- city: ${user.address.city} -- country: ${user.address.country} -- street: ${user.address.street} -- houseNumber: ${user.address.houseNumber}`;
+        usersDiv1.append(userDiv);
+    }
+
+    // - За допомоги циклу проітерувати  масив users, записати кожного юзера в сівй блок за допомоги document.createElement, розділивши всі властивості по своїм блокам (div>div*4)
+
+    const usersDiv2 = document.getElementById('users2');
+
+    for (const user of users) {
+        const userDiv = document.createElement('div');
+        userDiv.classList.add('user2');
+
+        const name = document.createElement('div');
+        name.innerText = `Name: ${user.name}`;
+
+        const age = document.createElement('div');
+        age.innerText = `Age: ${user.age}`;
+
+        const status = document.createElement('div');
+        status.innerText = `Status: ${user.status}`;
+
+        const address = document.createElement('div');
+        address.innerText = `Address -- City: ${user.address.city} -- Country: ${user.address.country} -- Street: ${user.address.street} -- House Number: ${user.address.houseNumber}`;
+
+        userDiv.append(name, age, status, address);
+
+        usersDiv2.append(userDiv);
+    }
+
+    // - За допомоги циклу проітерувати  масив users, записати кожного юзера в сівй блок за допомоги document.createElement, розділивши всі властивості по своїм блокам , блок з адресою зробити окремим блоком, з блоками для кожної властивості
+
+    const usersDiv3 = document.getElementById('users3');
+
+    for (const user of users) {
+        const userDiv = document.createElement('div');
+        userDiv.classList.add('user3', 'd-flex', 'w260');
+
+        const leftDiv = document.createElement('div');
+        leftDiv.classList.add('left');
+
+        const name = document.createElement('div');
+        name.innerText = `Name: ${user.name}`;
+
+        const age = document.createElement('div');
+        age.innerText = `Age: ${user.age}`;
+
+        const status = document.createElement('div');
+        status.innerText = `Status: ${user.status}`;
+
+        leftDiv.append(name, age, status);
+
+        const rightDiv = document.createElement('div');
+        rightDiv.classList.add('right');
+
+        const city = document.createElement('div');
+        city.innerText = `City: ${user.address.city}`;
+
+        const country = document.createElement('div');
+        country.innerText = `Country: ${user.address.country}`;
+
+        const street = document.createElement('div');
+        street.innerText = `Street: ${user.address.street}`;
+
+        const houseNumber = document.createElement('div');
+        houseNumber.innerText = `House Number: ${user.address.houseNumber}`;
+
+        rightDiv.append(city, country, street, houseNumber);
+        userDiv.append(leftDiv, rightDiv);
+        usersDiv3.append(userDiv);
+    }
+
+</script>
+</body>
+</html>

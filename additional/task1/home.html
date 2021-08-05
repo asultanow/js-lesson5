@@ -1,0 +1,42 @@
+<!--
+Створити форму з інпутом для введення ім'я, та action="index2.html".
+При відправці данних з форми, зберігати ім'я в localstorage, та переходити на index2.html.
+На index2.html виводити записане в localstorage ім'я в div
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+</head>
+<body>
+
+<form id="user-form" action="name.html">
+    <label>Enter your name:
+        <input id="username" type="text" name="username">
+    </label>
+    <input type="submit" value="send name">
+</form>
+
+<script>
+    let userForm = document.getElementById('user-form');
+    let sendNameBtn = document.getElementById('submit-btn');
+    let nameInp = document.getElementById('username');
+
+    userForm.onsubmit = function () {
+        localStorage.setItem('name', nameInp.value);
+        nameInp.value = '';
+    }
+
+    // sendNameBtn.onclick = function () {
+    //     localStorage.setItem('name', nameInp.value);
+    // }
+
+</script>
+
+</body>
+</html>

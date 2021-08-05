@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Product list</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/list.css">
+</head>
+<body>
+
+<div class="main">
+    <header class="header d-flex">
+        <h1>Product list</h1>
+        <div class=""><a href="home.html" class="btn bg-blue">Add product</a></div>
+    </header>
+    <div id="products"></div>
+    <div id="total" class="total d-flex">
+        <div class="total_text">Total:</div>
+        <div id="total_amount" class="total_amount"></div>
+        <div id="total_sum" class="total_sum"></div>
+        <div class="total_delete-all">
+            <button id="delete-all-btn" class="btn bg-red">Delete all</button>
+        </div>
+    </div>
+    <div id="no-products" class="no-products">no products</div>
+</div>
+
+<script src="javascript/list.js"></script>
+
+</body>
+</html>

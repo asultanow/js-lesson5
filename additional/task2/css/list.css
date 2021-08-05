@@ -1,0 +1,61 @@
+.no-products {
+    display: none;
+    text-align: center;
+}
+
+.image {
+    width: 140px;
+    overflow: hidden;
+}
+
+.image img {
+    height: 140px;
+}
+
+.name {
+    width: 260px;
+}
+
+.price {
+    width: 120px;
+    text-align: right;
+}
+
+.amount {
+    width: 100px;
+    text-align: right;
+}
+
+.sum {
+    width: 120px;
+    text-align: right;
+}
+
+.delete-btn-box {
+    width: 140px;
+    padding-left: 35px;
+}
+
+.total {
+    height: 90px;
+}
+
+.total_text {
+    width: 530px;
+    text-align: right;
+}
+
+.total_amount {
+    width: 100px;
+    text-align: right;
+}
+
+.total_sum {
+    width: 120px;
+    text-align: right;
+}
+
+.total_delete-all {
+    width: 150px;
+    padding-left: 35px;
+}

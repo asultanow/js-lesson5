@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+a {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+input {
+    width: 100%;
+    border: 1px solid black;
+}
+
+.main {
+    width: 940px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    background: lightgray;
+}
+
+.d-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header {
+    height: 100px;
+}
+
+.btn {
+    display: block;
+    color: white;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.bg-red {
+    transition: background-color 0.8s;
+    background: #b30d0d;
+}
+
+.bg-blue {
+    transition: background-color 0.8s;
+    background: #0606a0;
+}
+
+.btn.bg-red:hover {
+    transition: background-color 0.2s;
+    background: #ef3f3f;
+}
+
+.btn.bg-blue:hover {
+    transition: background-color 0.2s;
+    background: #4b4bec;
+}
+
+.product, .product-form-box {
+    width: 900px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background: white;
+}
+
+.form-items > div:nth-child(odd) {
+    width: 14%;
+    padding: 5px 10px;
+}
+
+.form-items > div:nth-child(even) {
+    width: 86%;
+    padding: 5px 10px;
+
+}
